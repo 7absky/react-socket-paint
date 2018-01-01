@@ -2,7 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Paint from './Paint';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const props = {
+    lineWidth: "2",
+    strokeColor: "#d20001",
+    width: 400,
+    height: 700
+}
+
+
+ReactDOM.render(<Paint {...props}/>, document.getElementById('root'));
 registerServiceWorker();
