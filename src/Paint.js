@@ -58,6 +58,7 @@ class Paint extends Component {
                     width= {this.props.width}
                     height= {this.props.height}
                     onMouseDown={this.startDrawing}
+                    style={{...this.props.style}}                    
                     onMouseUp={this.stopDrawing}
                     onMouseMove={this.draw}
                 />

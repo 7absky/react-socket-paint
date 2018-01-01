@@ -5,7 +5,10 @@ import App from './App';
 import Paint from './Paint';
 import registerServiceWorker from './registerServiceWorker';
 
-const props = {
+const canvasSettings = {
+    style: {
+        background: 'white'
+    },
     lineWidth: "2",
     strokeColor: "#d20001",
     width: 400,
@@ -13,5 +16,5 @@ const props = {
 }
 
 
-ReactDOM.render(<Paint {...props}/>, document.getElementById('root'));
+ReactDOM.render(<Paint {...canvasSettings}/>, document.getElementById('root'));
 registerServiceWorker();
