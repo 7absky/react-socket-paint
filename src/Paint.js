@@ -5,7 +5,6 @@ class Paint extends Component {
         super(props);
         this.state = {
             isDrawing: false,
-
         }
         this.startDrawing = this.startDrawing.bind(this);
         this.stopDrawing = this.stopDrawing.bind(this);
@@ -18,10 +17,10 @@ class Paint extends Component {
         this.context.lineWidth = 'round';
         this.context.strokeStyle = this.props.strokeColor;
         this.context.stroke();
-        this.context.beginPath();
+        this.context.beginPath();        
     }
     componentDidMount(){
-        this.updateCanvas();
+        this.updateCanvas();      
     }
     componentDidUpdate() {
         this.updateCanvas();
@@ -47,17 +46,14 @@ class Paint extends Component {
             this.context.stroke();
         }
     }
-    getCanvasRef(el) {
-        this.canvas = el;
-    }
     render() {
         return (
-            <div>
+            <div className={this.props.className}>
                 <canvas 
                     ref={   (canvas)=> (this.canvas = canvas) }
-                    width= {this.props.width}
-                    height= {this.props.height}
                     onMouseDown={this.startDrawing}
+                    width={this.props.width}
+                    height={this.props.height}
                     style={{...this.props.style}}                    
                     onMouseUp={this.stopDrawing}
                     onMouseMove={this.draw}
